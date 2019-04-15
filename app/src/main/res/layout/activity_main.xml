@@ -7,7 +7,7 @@
     tools:context="org.brohede.marcus.listviewapp.MainActivity">
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/list_item_textview"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Hello Bro!"
@@ -19,9 +19,9 @@
 //Här skapas en listview.
 
     <ListView
-        android:id="@+id/list_item_textview"
-        android:layout_width="351dp"
-        android:layout_height="318dp"
+        android:id="@+id/my_listview"
+        android:layout_width="match_parent"
+        android:layout_height="275dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
@@ -29,7 +29,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        app:layout_constraintTop_toBottomOf="@+id/list_item_textview" />
 
 
 </android.support.constraint.ConstraintLayout>

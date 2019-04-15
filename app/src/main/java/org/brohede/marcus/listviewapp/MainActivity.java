@@ -14,13 +14,15 @@ public class MainActivity extends AppCompatActivity {
     private String[] mountainLocations = {"Alps","Alps","Alaska"};
     private int[] mountainHeights ={4478,4808,6190};
     // Create ArrayLists from the raw data above and use these lists when populating your ListView.
-
+    private ArrayList<String>listData;
+    private ArrayAdapter <String> adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+        listData=new ArrayList<>(Arrays.asList(mountainNames));
+        adapter= new ArrayAdapter<String>(this, R.layout. list_item_textview, R.id.list_item_textview, listData);
         // The onCreate method is run when the app is created.
         // Before you can implement this you need to create the layout xml files that
         // will hold/show your data created here. You need three create things:
@@ -32,21 +34,19 @@ public class MainActivity extends AppCompatActivity {
         //                      an individual item in the ListView we are creating.
         // Here you should enter your code that fills the ListView
         // 1. Create an array
-        String[] rawData= {"Sak1", "Sak2", "Sak3"};
 
         // 2. Create a List object with your array from step 1 as in-data
-        List<String> listData = new ArrayList<String>(Arrays.asList(rawData));
+        // private ArrayList<string>listData=new ArrayList<>(Arrays.asList(mountainNames));
 
         // 3. Create an ArrayAdapter object that connects
         //    * list_item_textview
         //    * my_item_textview
         //    * List object created in step 2
-        ArrayAdapter adapter = new ArrayAdapter(getApplicationContext(), R.layout.list_item_textview,
-                R.id.my_item_textview, listData);
+
         // 4. Find the ListView layout element "my_listview" and create an object instance
-        ListView myListView = (ListView)findViewById(R.id.my_listview);
-        myListView.setAdapter(adapter);
-        adapter.add("Sak");
+        ListView my_listview=(ListView) findViewById(R.id.my_listview);
+        my_listview.setAdapter(adapter);
+
         // 5. Connect the ArrayAdapter from step 3 with ListView object created in step 4
         // 6. Style the ListView items according to Material Design
         //    See: https://material.io/guidelines/components/lists.html#lists-specs
