@@ -54,12 +54,13 @@ public class MainActivity extends AppCompatActivity {
         ListView my_listview=(ListView) findViewById(R.id.my_listview);
         my_listview.setAdapter(adapter);
 
-
-
         my_listview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Toast.makeText(MainActivity.this, "Hejsan", Toast.LENGTH_SHORT).show();
+            public void onItemClick(AdapterView<?> parent, View view, int i, long id) {
+                String test = " "       + mountainNames[i] + " "
+                                        + mountainLocations [i] +" "
+                                        + mountainHeights [i] + " ";
+                Toast.makeText(MainActivity.this, test, Toast.LENGTH_SHORT).show();
             }
         });
 
